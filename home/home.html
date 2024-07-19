@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1c244a, #38b6e4);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .navbar {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        .navbar .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            color: #38b6e4;
+        }
+
+        .side-panel {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Koyu yarı saydam arka plan */
+            box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .side-panel a {
+            color: #fff; /* Yazı rengi beyaz */
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .side-panel a:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Hover sırasında hafif açık arka plan */
+        }
+
+        .side-panel.show {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="menu-icon" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </span>
+    </nav>
+
+    <div class="side-panel" id="sidePanel">
+        <a href="bayi-giris.html">Bayi Girişi</a>
+        <a href="kayit-ol.html">Kayıt Ol</a>
+    </div>
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            const sidePanel = document.getElementById('sidePanel');
+            if (sidePanel.classList.contains('show')) {
+                sidePanel.classList.remove('show');
+            } else {
+                sidePanel.classList.add('show');
+            }
+        });
+    </script>
+</body>
+
+</html>

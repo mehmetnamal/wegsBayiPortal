@@ -1,0 +1,159 @@
+/* Genel Arka Plan ve Renkler */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.night-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.navbar {
+    margin-bottom: 20px;
+    position: relative; /* Needed for dropdown positioning */
+}
+
+.navbar.night-mode {
+    background-color: #333;
+}
+
+.navbar-nav .nav-item .btn {
+    position: relative; /* To position the dropdown menu */
+    margin-left: 15px; /* Space between icons */
+    border: none; /* Remove border */
+    padding: 0;
+}
+
+.user-info-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+    overflow: hidden;
+}
+
+.user-info-dropdown.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 200px; /* Adjust this value based on the content */
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.user-info-dropdown a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.user-info-dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Night Mode Styles for Dropdown */
+.user-info-dropdown.night-mode {
+    background-color: #1e1e1e;
+    border-color: #444;
+}
+
+.user-info-dropdown.night-mode a {
+    color: #ddd;
+}
+
+.user-info-dropdown.night-mode a:hover {
+    background-color: #333;
+}
+
+.wegs-sidebar {
+    background-color: #343a40;
+    height: 100vh;
+    padding: 0;
+    position: fixed;
+    top: 56px; /* Navbar height */
+    left: 0;
+    width: 250px;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+.wegs-sidebar.night-mode {
+    background-color: #1f1f1f;
+}
+
+.wegs-sidebar .list-group-item {
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    transition: background-color 0.3s;
+}
+
+.wegs-sidebar .list-group-item:hover {
+    background-color: #495057;
+}
+
+.wegs-sidebar .list-group-item.night-mode:hover {
+    background-color: #2a2a2a;
+}
+
+.wegs-sidebar .list-group-item a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.wegs-sidebar .list-group-item a i {
+    margin-right: 10px;
+}
+
+.wegs-content {
+    margin-left: 270px; /* Width of sidebar + some padding */
+    padding: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card-header {
+    background-color: #38b6e4;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card-header.night-mode {
+    background-color: #444;
+}
+
+.card-body {
+    background-color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card-body.night-mode {
+    background-color: #1e1e1e;
+}
+
+.card-body p {
+    color: #333;
+}
+
+.card-body.night-mode p {
+    color: #ddd;
+}
